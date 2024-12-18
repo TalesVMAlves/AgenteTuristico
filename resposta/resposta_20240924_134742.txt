@@ -1,0 +1,61 @@
+Respota: **
+
+# Documentação da Procedure
+
+## Procedimento SQL: processa_nota
+- *ID do Procedure:* [ID Único]
+- *Data de Documentação:* [AAAA-MM-DD HH:MM:SS]
+- *Autor da Documentação:* [Nome ou Sistema]
+
+---
+
+### Descrição da Procedure:
+O procedimento processa_nota é utilizado para processar uma nota fiscal, buscando informações detalhadas sobre o produto e enviando-os para um serviço de codificação. Esse procedimento utiliza a tabela fis_nota_fiscal e fis_item_nota_fiscal para coletar as informações necessárias.
+
+---
+
+### Parâmetros de Entrada:
+- @pSqNotaFiscal *[number]* - Número da nota fiscal
+- @pSqItemNotaFiscal *[number]* - Item da nota fiscal
+- @pSaidaCodigoProduto *[out int]* - Código do produto retornado
+- @pSaidaProbabilidade *[out varchar2]* - Probabilidade de sucesso retornada
+
+---
+
+### Parâmetros de Saída:
+- @vretorno *[boolean]* - Indicador de retorno da operação
+
+---
+
+### Dependências:
+- *Tabela:* fis_nota_fiscal, fis_item_nota_fiscal
+- *View:* [Nome da View]
+
+---
+
+### Última Execução:
+- *Data:* [AAAA-MM-DD HH:MM:SS]
+- *Tempo Médio de Execução:* [Duração]
+
+---
+
+### Otimizações Sugeridas:
+- *Otimizações:* Sim
+- *Data da Sugestão de Otimização:* [AAAA-MM-DD HH:MM:SS]
+
+#### Descrição da Otimização:
+A inclusão do TRY/CATCH pode ajudar a evitar problemas com exceções.
+
+---
+
+### Observações Finais:
+Esse procedimento é usado para coletar informações detalhadas sobre um produto e enviar essas informações para um serviço de codificação. A probabilidade de sucesso da codificação será retornada, bem como o código do produto. 
+
+---
+
+### Status da Documentação:
+- [Completo/Incompleto]
+­
+*processa_nota:* [ID Único]
+Fontes: ['pdf\\Oracle Database 11g SQL.pdf:389:0', 'pdf\\Oracle Database 11g SQL.pdf:55:0', 'pdf\\Oracle Database 11g SQL.pdf:532:1', 'pdf\\Oracle Database 11g SQL.pdf:525:2', 'pdf\\Oracle Database 11g SQL.pdf:386:1']
+Tempo de Execução: 307.62 segundos

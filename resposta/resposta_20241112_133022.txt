@@ -1,0 +1,21 @@
+Resposta: Com base no código fornecido, podemos identificar quatro camadas do sistema:
+
+1. **Camada de Abstração**: É a camada mais alta do sistema, responsável por se comunicar com o usuário e fornecer um interface para os dados. Nesta camada, são utilizadas as seguintes classes:
+	* `Retorno`: responsável por conter as informações de retorno das operações do sistema.
+	* `DataSet`: armazena os dados retornados pela operação do sistema.
+2. **Camada de Negócios**: É a camada que lida com as regras de negócio do sistema, como validação de funções, verificação de permissões e recuperação de dados. Nesta camada, são utilizadas as seguintes classes:
+	* `ValidarFuncaoUsuario`: responsável por verificar se o usuário tem permissão para realizar uma determinada operação.
+3. **Camada de Persistência**: É a camada que lida com a persistência dos dados do sistema, como banco de dados e armazenamento de arquivos. Nesta camada, são utilizadas as seguintes classes:
+	* `Fabrica`: responsável por se comunicar com o banco de dados e realizar operações CRUD (criar, ler, atualizar, excluir).
+4. **Camada de Execução**: É a camada que executa as operações do sistema, como validação de funções, recuperação de dados e armazenamento de resultados. Nesta camada, são utilizadas as seguintes classes:
+	* `ExecutarProcedureRetorno`: responsável por executar uma determinada procedura do banco de dados e recuperar os resultados.
+
+As regras de negócio do sistema podem ser extraídas das seguintes operações:
+
+1. **Validação de Função**: a validação de função é realizada pela classe `ValidarFuncaoUsuario`, que verifica se o usuário tem permissão para realizar uma determinada operação.
+2. **Verificação de Permissões**: a verificação de permissões é realizada pela classe `ValidarFuncaoUsuario` e pelas classes que utilizam essa classe.
+3. **Recuperação de Dados**: a recuperação de dados é realizada pelas classes que utilizam a classe `Fabrica`, que se comunica com o banco de dados para realizar operações CRUD.
+
+Em resumo, a camada de negócios do sistema é responsável por lidar com as regras de negócio e validação de funções, enquanto a camada de persistência é responsável por lidar com a persistência dos dados. A camada de execução é responsável por executar as operações do sistema e recuperar os resultados.
+Fontes: ['LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:61:1', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:39:6', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:41:3', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:43:6', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:61:0', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:49:3', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:41:1', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:44:1', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:49:6', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:61:2']
+Tempo de Execução: 161.56 segundos

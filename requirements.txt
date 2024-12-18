@@ -1,0 +1,14 @@
+langchain-ollama
+pypdf
+chromadb
+pytest
+boto3
+langchain
+langchain-google-genai
+langchain_community
+duckduckgo-search
+youtube_search
+wikipedia
+langchainhub
+numexpr
+python-dotenv

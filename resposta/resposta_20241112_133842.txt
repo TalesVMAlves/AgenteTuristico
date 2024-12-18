@@ -1,0 +1,9 @@
+Resposta: Sim, existe uma validação nos inputs, pois há métodos que utilizam o "TryParse" para tentar converter uma string para um valor do tipo DateTime. Por exemplo:
+
+```csharp
+DateTime.TryParse(pParametros["pData_inicio"].ToString(), out dataInicial);
+```
+
+Este método tenta converter a string "pParametros["pData_inicio"]" para um DateTime e atribui o resultado ao valor de out "dataInicial". Se a conversão não for possível, o valor de out será null.
+Fontes: ['LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:61:1', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:61:0', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:38:0', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:59:8', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:3:5', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:4:0', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:50:7', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:60:4', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:61:2', 'LivrosFiscais\\pdfUnitario\\Fiscalizacao__ConsultaSped__LivrosFiscais__VisualizacaoLivrosFiscais.pdf:3:0']
+Tempo de Execução: 49.66 segundos
