@@ -76,11 +76,28 @@ travel_planing_tools = [
     ),
     Tool(
         name="Weather Forecast",
-        func=weatherapi_forecast_periods,
-        description="""Essa ferramenta DEVE ser usada *antes* de gerar o roteiro turístico, após o modelo coletar todas as informações necessárias do usuário, incluindo as datas exatas. 
-        O modelo deve consultar o clima separadamente para um dia de cada vez no período informado, garantindo que as atividades do roteiro sejam planejadas de acordo com as condições climáticas. 
-        A previsão do tempo é um passo obrigatório quando é um fator relevante para o planejamento."""
-        ),
+        func=lambda date_string: weatherapi_forecast_periods(date_string, st.session_state.selected_destino),
+        description="""Esta ferramenta DEVE ser usada obrigatoriamente *antes* de gerar o roteiro turístico, e somente após coletar todas as informações necessárias do usuário, incluindo o intervalo exato de datas. 
+        A consulta do clima deve ser feita separadamente para cada dia do período informado, garantindo que as atividades planejadas no roteiro sejam compatíveis com as condições climáticas previstas. 
+
+        **Quando usar:**
+        - O clima é um fator relevante para a definição de atividades no roteiro.
+        - O usuário especificou o intervalo de datas para o planejamento.
+
+        **Instruções:**
+        1. Certifique-se de coletar as datas exatas do período solicitado pelo usuário.
+        2. Consulte a previsão do tempo para cada dia separadamente no intervalo de datas fornecido.
+        3. Use o resultado da previsão para ajustar o planejamento das atividades de acordo com as condições climáticas.
+
+        **Exemplo de uso:**
+        - Entrada do usuário: "Planeje um roteiro entre os dias 1º de agosto e 4 de março."
+        - Ações do modelo:
+            Action input: 2025/08/01
+            Action input: 2025/08/02
+            Action input: 2025/08/03
+            Action input: 2025/08/04
+    """
+    ),
     Tool(
         name="Query RAG",
         func=lambda query_text: query_rag(query_text, st.session_state.selected_destino),
