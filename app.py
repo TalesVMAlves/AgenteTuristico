@@ -3,9 +3,9 @@ from agents import travel_agent_executor
 from unidecode import unidecode
 
 DESTINOS = {
-    "Natal": "Natal",
-    "Caicó": "Caicó",
-    "Pipa": "Pipa"
+    "Natal": "natal",
+    "Caicó": "caico",
+    "Pipa": "pipa"
 }
 
 if __name__ == '__main__':
@@ -16,7 +16,7 @@ if __name__ == '__main__':
     destino_selecionado = st.sidebar.selectbox('Destino', list(DESTINOS.keys()))
     
     if destino_selecionado:
-        st.write(f"Você selecionou {DESTINOS[destino_selecionado]}")
+        st.write(f"Você selecionou {destino_selecionado}")
         st.session_state.selected_destino = DESTINOS[destino_selecionado]
 
     if 'messages' not in st.session_state:
