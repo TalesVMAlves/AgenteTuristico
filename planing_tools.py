@@ -12,9 +12,9 @@ CHROMA_PATH = "chroma"
 WEATHER_API = os.getenv('WEATHER_API')
 BASE_URL = "http://api.weatherapi.com/v1/forecast.json" #comentario
 
-def weatherapi_forecast_periods(date_string: str) -> str:
+def weatherapi_forecast_periods(date_string: str, destino: str) -> str:
     """
-    Obtém a previsão do tempo para a cidade de Natal em uma data específica,
+    Obtém a previsão do tempo para a cidade da cidade destino em uma data específica,
     separada em manhã, tarde e noite.
 
     Args:
@@ -26,7 +26,7 @@ def weatherapi_forecast_periods(date_string: str) -> str:
     try:
         params = {
             "key": WEATHER_API,
-            "q": "Natal",
+            "q": destino.capitalize(),
             "dt": date_string,
             "aqi": "no",
             "alerts": "no",
@@ -46,7 +46,7 @@ def weatherapi_forecast_periods(date_string: str) -> str:
                 "Noite": range(18, 24)
             }
 
-            result = f"Previsão para {date_string} em Natal:\n"
+            result = f"Previsão para {date_string} em {destino.capitalize()}:\n"
             for period, hours in periods.items():
                 result += f"\n{period}:\n"
                 filtered_data = [
