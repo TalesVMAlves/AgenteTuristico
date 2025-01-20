@@ -1,7 +1,6 @@
 from dotenv import load_dotenv
 import os
 import requests
-from datetime import datetime, timedelta
 from get_embedding_function import get_embedding_function
 from langchain_chroma import Chroma
 
@@ -10,7 +9,7 @@ load_dotenv()
 
 CHROMA_PATH = "chroma"
 WEATHER_API = os.getenv('WEATHER_API')
-BASE_URL = "http://api.weatherapi.com/v1/forecast.json" #comentario
+BASE_URL = "http://api.weatherapi.com/v1/forecast.json"
 
 def weatherapi_forecast_periods(date_string: str, destino: str) -> str:
     """
@@ -84,7 +83,6 @@ def query_rag(query_text: str, destino: str) -> str:
     db = Chroma(persist_directory=f"{CHROMA_PATH}/{destino}", embedding_function=embedding_function)
 
     
-    # Search the DB.
     results = db.similarity_search_with_score(f"{destino}: {query_text}", k=5)
 
     context_text = "\n\n---\n\n".join([doc.page_content for doc, _score in results])
