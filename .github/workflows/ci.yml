@@ -24,7 +24,9 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt  # Certifique-se de que suas dependências estão listadas no arquivo
+          pip install -r requirements.txt
 
       - name: Run populate_database
+        env:
+          WANDB_API: ${{ secrets.WANDB_API }}
         run: python populate_database.py
