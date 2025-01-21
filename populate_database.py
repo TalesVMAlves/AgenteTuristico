@@ -2,17 +2,18 @@ import argparse
 from dotenv import load_dotenv
 import os
 import shutil
-from langchain_community.document_loaders.pdf import PyPDFDirectoryLoader
+from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.schema.document import Document
 from get_embedding_function import get_embedding_function
 from langchain_chroma import Chroma
 import wandb
+import markdown
 
 load_dotenv()
 
 CHROMA_ROOT_PATH = "chroma"
-DATA_ROOT_PATH = "pdf"
+DATA_ROOT_PATH = "markdowns"
 WANDB_API = os.getenv("WANDB_API")
 
 def main():
@@ -62,10 +63,17 @@ def process_city(city_name: str, city_path: str):
 
 def load_documents(city_path: str):
     """
-    Carrega documentos PDF da subpasta de uma cidade.
+    Carrega documentos Markdown da subpasta de uma cidade.
     """
-    document_loader = PyPDFDirectoryLoader(city_path)
-    return document_loader.load()
+    documents = []
+    for filename in os.listdir(city_path):
+        if filename.endswith(".md"):
+            file_path = os.path.join(city_path, filename)
+            with open(file_path, "r", encoding="utf-8") as file:
+                md_content = file.read()
+                html_content = markdown.markdown(md_content)
+                documents.append(Document(page_content=html_content, metadata={"source": file_path}))
+    return documents
 
 def split_documents(documents: list[Document]):
     """
