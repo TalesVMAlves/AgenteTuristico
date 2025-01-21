@@ -3,13 +3,14 @@ import os
 import requests
 from get_embedding_function import get_embedding_function
 from langchain_chroma import Chroma
+import wandb
 
 load_dotenv()
 
-
-CHROMA_PATH = "chroma"
 WEATHER_API = os.getenv('WEATHER_API')
 BASE_URL = "http://api.weatherapi.com/v1/forecast.json"
+WANDB_PROJECT = "tales-v-m-alves/chroma_db_artifacts"
+ARTIFACT_NAME = "chroma_databases-v0"
 
 def weatherapi_forecast_periods(date_string: str, destino: str) -> str:
     """
@@ -78,11 +79,33 @@ def weatherapi_forecast_periods(date_string: str, destino: str) -> str:
     except Exception as e:
         return f"Erro inesperado: {str(e)}"
 
+def download_artifact(artifact_name: str, project_path: str) -> str:
+    """Downloads the specified artifact from WandB and returns the local directory."""
+    api = wandb.Api()
+    artifact = api.artifact(f"{project_path}/{artifact_name}:latest")
+    download_path = artifact.download()
+    return download_path
+
 def query_rag(query_text: str, destino: str) -> str:
     embedding_function = get_embedding_function()
-    db = Chroma(persist_directory=f"{CHROMA_PATH}/{destino}", embedding_function=embedding_function)
 
-    
+    artifact_dir = os.path.join("artifacts", ARTIFACT_NAME, "chroma")
+    if not os.path.exists(artifact_dir):
+        os.makedirs("artifacts", exist_ok=True)
+        print(f"📥 Downloading WandB artifact '{ARTIFACT_NAME}'...")
+        download_path = download_artifact(ARTIFACT_NAME, WANDB_PROJECT)
+        print(f"✅ Artifact downloaded to: {download_path}")
+        artifact_dir = os.path.join("artifacts", ARTIFACT_NAME, "chroma")
+    else:
+        print(f"📦 Using existing artifact at: {artifact_dir}")
+
+    chroma_city_path = os.path.join(artifact_dir, destino)
+    print(chroma_city_path)
+    if not os.path.exists(chroma_city_path):
+        return f"Banco de dados para '{destino}' não encontrado no artefato."
+
+    db = Chroma(persist_directory=chroma_city_path, embedding_function=embedding_function)
+
     results = db.similarity_search_with_score(f"{destino}: {query_text}", k=5)
 
     context_text = "\n\n---\n\n".join([doc.page_content for doc, _score in results])
