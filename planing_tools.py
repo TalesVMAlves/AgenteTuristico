@@ -9,8 +9,6 @@ load_dotenv()
 
 WEATHER_API = os.getenv('WEATHER_API')
 BASE_URL = "http://api.weatherapi.com/v1/forecast.json"
-WANDB_PROJECT = "tales-v-m-alves/chroma_db_artifacts"
-ARTIFACT_NAME = "chroma_databases"
 
 def weatherapi_forecast_periods(date_string: str, destino: str) -> str:
     """
@@ -86,21 +84,8 @@ def download_artifact(artifact_name: str, project_path: str) -> str:
     download_path = artifact.download()
     return download_path
 
-def query_rag(query_text: str, destino: str) -> str:
+def query_rag(query_text: str, destino: str, chroma_city_path: str) -> str:
     embedding_function = get_embedding_function()
-
-    download_path = download_artifact(ARTIFACT_NAME, WANDB_PROJECT)
-    if not os.path.exists(download_path):
-        os.makedirs("artifacts", exist_ok=True)
-        print(f"📥 Baixando o WandB artifact '{ARTIFACT_NAME}'...")
-        print(f"✅ Artifact baixado em: {download_path}")
-    else:
-        print(f"📦 Using existing artifact at: {download_path}")
-
-    chroma_city_path = os.path.join(download_path, 'chroma', destino)
-    print(chroma_city_path)
-    if not os.path.exists(chroma_city_path):
-        return f"Banco de dados para '{destino}' não encontrado no artefato."
 
     db = Chroma(persist_directory=chroma_city_path, embedding_function=embedding_function)
 

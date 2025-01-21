@@ -100,7 +100,7 @@ travel_planing_tools = [
     ),
     Tool(
         name="Query RAG",
-        func=lambda query_text: query_rag(query_text, st.session_state.selected_destino),
+        func=lambda query_text: query_rag(query_text, st.session_state.selected_destino, st.session_state.chroma_city_path),
         description="""Esta ferramenta deve ser usada quando o modelo souber a cidade de destino e os interesses do usuário, com o objetivo de fornecer informações sobre pontos turísticos e atrações que se alinham com esses interesses. 
         O modelo deve utilizar essa ferramenta para sugerir atividades e lugares específicos a visitar, baseados na cidade e nos interesses fornecidos."""
     ),
