@@ -1,0 +1,21 @@
+🔄 Processando a cidade: caico
+incorrect startxref pointer(1)
+parsing for Object Streams
+Número de documentos no banco de dados 'chroma\caico': 0
+👉 Adicionando 17 novo(s) documento(s) ao banco 'chroma\caico'
+🔄 Processando a cidade: natal
+incorrect startxref pointer(1)
+parsing for Object Streams
+Número de documentos no banco de dados 'chroma\natal': 0
+👉 Adicionando 192 novo(s) documento(s) ao banco 'chroma\natal'
+🔄 Processando a cidade: pipa
+incorrect startxref pointer(1)
+parsing for Object Streams
+Número de documentos no banco de dados 'chroma\pipa': 0
+👉 Adicionando 110 novo(s) documento(s) ao banco 'chroma\pipa'
+[34m[1mwandb[0m: Adding directory to artifact (.\chroma)... Done. 0.0s
+Traceback (most recent call last):
+  File "C:\Users\Tales\Python\AgenteTuristico\populate_database.py", line 50, in main
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\wandb\sdk\artifacts\_validators.py", line 97, in wrapper
+    raise ArtifactNotLoggedError(fullname=method_fullname, obj=self)
+wandb.sdk.artifacts.exceptions.ArtifactNotLoggedError: 'Artifact.version' used prior to logging artifact or while in offline mode. Call Artifact.wait() before accessing logged artifact properties.. Did you mean: '_version'?

@@ -1,0 +1,42 @@
+{
+  "os": "Windows-10-10.0.26100-SP0",
+  "python": "CPython 3.10.11",
+  "startedAt": "2025-01-21T10:21:09.464814Z",
+  "program": "C:\\Users\\Tales\\Python\\AgenteTuristico\\populate_database.py",
+  "codePath": "populate_database.py",
+  "git": {
+    "remote": "https://github.com/TalesVMAlves/AgenteTuristico.git",
+    "commit": "d3f93156ff6429f3dc927f3827156e980e19a07b"
+  },
+  "email": "tales.v.m.alves@gmail.com",
+  "root": "C:\\Users\\Tales\\Python\\AgenteTuristico",
+  "host": "Tales",
+  "executable": "C:\\Users\\Tales\\Python\\AgenteTuristico\\.venv\\Scripts\\python.exe",
+  "codePathLocal": "populate_database.py",
+  "cpu_count": 10,
+  "cpu_count_logical": 16,
+  "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "511312916480",
+      "used": "244581511168"
+    }
+  },
+  "memory": {
+    "total": "16869351424"
+  },
+  "cpu": {
+    "count": 10,
+    "countLogical": 16
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+      "memoryTotal": "6442450944",
+      "cudaCores": 2560,
+      "architecture": "Ampere"
+    }
+  ],
+  "cudaVersion": "12.7"
+}

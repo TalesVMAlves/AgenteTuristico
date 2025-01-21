@@ -1,0 +1,120 @@
+🔄 Processando a cidade: caico
+incorrect startxref pointer(1)
+parsing for Object Streams
+Error in sys.excepthook:
+Traceback (most recent call last):
+  File "C:\Users\Tales\AppData\Local\Programs\Python\Python310\lib\linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+  File "C:\Users\Tales\AppData\Local\Programs\Python\Python310\lib\linecache.py", line 136, in updatecache
+    with tokenize.open(fullname) as fp:
+  File "C:\Users\Tales\AppData\Local\Programs\Python\Python310\lib\tokenize.py", line 394, in open
+    buffer = _builtin_open(filename, 'rb')
+KeyboardInterrupt
+
+Original exception was:
+Traceback (most recent call last):
+  File "C:\Users\Tales\Python\AgenteTuristico\populate_database.py", line 40, in main
+    process_city(city_folder, city_path)
+  File "C:\Users\Tales\Python\AgenteTuristico\populate_database.py", line 61, in process_city
+    add_to_chroma(chunks, chroma_city_path)
+  File "C:\Users\Tales\Python\AgenteTuristico\populate_database.py", line 87, in add_to_chroma
+    persist_directory=chroma_path, embedding_function=get_embedding_function()
+  File "C:\Users\Tales\Python\AgenteTuristico\get_embedding_function.py", line 5, in get_embedding_function
+    embeddings = HuggingFaceEmbeddings(model_name=model_name)
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\langchain_huggingface\embeddings\huggingface.py", line 52, in __init__
+    import sentence_transformers  # type: ignore[import]
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\wandb\sdk\lib\import_hooks.py", line 182, in _exec_module
+    self.loader.exec_module(module)
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\sentence_transformers\__init__.py", line 14, in <module>
+    from sentence_transformers.cross_encoder.CrossEncoder import CrossEncoder
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\sentence_transformers\cross_encoder\__init__.py", line 3, in <module>
+    from .CrossEncoder import CrossEncoder
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\sentence_transformers\cross_encoder\CrossEncoder.py", line 18, in <module>
+    from sentence_transformers.evaluation.SentenceEvaluator import SentenceEvaluator
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\sentence_transformers\evaluation\__init__.py", line 9, in <module>
+    from .NanoBEIREvaluator import NanoBEIREvaluator
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\sentence_transformers\evaluation\NanoBEIREvaluator.py", line 11, in <module>
+    from sentence_transformers import SentenceTransformer
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\sentence_transformers\SentenceTransformer.py", line 33, in <module>
+    from sentence_transformers.model_card import SentenceTransformerModelCardData, generate_model_card
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\sentence_transformers\model_card.py", line 25, in <module>
+    from transformers.integrations import CodeCarbonCallback
+  File "<frozen importlib._bootstrap>", line 1075, in _handle_fromlist
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\transformers\utils\import_utils.py", line 1766, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\transformers\utils\import_utils.py", line 1778, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+  File "C:\Users\Tales\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\transformers\integrations\integration_utils.py", line 36, in <module>
+    from .. import PreTrainedModel, TFPreTrainedModel
+  File "<frozen importlib._bootstrap>", line 1075, in _handle_fromlist
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\transformers\utils\import_utils.py", line 1766, in __getattr__
+    module = self._get_module(self._class_to_module[name])
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\transformers\utils\import_utils.py", line 1778, in _get_module
+    return importlib.import_module("." + module_name, self.__name__)
+  File "C:\Users\Tales\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\transformers\modeling_utils.py", line 41, in <module>
+    from torch.utils.checkpoint import checkpoint
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\torch\utils\checkpoint.py", line 15, in <module>
+    from torch._functorch._aot_autograd.functional_utils import is_fun
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\torch\_functorch\_aot_autograd\functional_utils.py", line 19, in <module>
+    from torch.fx.experimental.symbolic_shapes import definitely_true, sym_eq
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\torch\fx\experimental\symbolic_shapes.py", line 65, in <module>
+    from torch.utils._sympy.functions import (
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\torch\utils\_sympy\functions.py", line 7, in <module>
+    import sympy
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\sympy\__init__.py", line 74, in <module>
+    from .polys import (Poly, PurePoly, poly_from_expr, parallel_poly_from_expr,
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\sympy\polys\__init__.py", line 68, in <module>
+    from .polytools import (Poly, PurePoly, poly_from_expr,
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\sympy\polys\polytools.py", line 27, in <module>
+    from sympy.polys.constructor import construct_domain
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\sympy\polys\constructor.py", line 7, in <module>
+    from sympy.polys.domains import ZZ, QQ, ZZ_I, QQ_I, EX
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\sympy\polys\domains\__init__.py", line 11, in <module>
+    from .domain import Domain
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\sympy\polys\domains\domain.py", line 10, in <module>
+    from sympy.polys.domains.domainelement import DomainElement
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 674, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 577, in module_from_spec
+  File "<frozen importlib._bootstrap>", line 556, in _init_module_attrs
+  File "<frozen importlib._bootstrap>", line 397, in cached
+  File "<frozen importlib._bootstrap_external>", line 513, in _get_cached
+  File "<frozen importlib._bootstrap_external>", line 406, in cache_from_source
+  File "<frozen importlib._bootstrap_external>", line 134, in _path_split
+  File "<frozen importlib._bootstrap_external>", line 134, in <genexpr>
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Tales\Python\AgenteTuristico\populate_database.py", line 142, in <module>
+    main()
+  File "C:\Users\Tales\Python\AgenteTuristico\populate_database.py", line 30, in main
+    with wandb.init(project=args.wandb_project, name=args.wandb_run_name) as run:
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\wandb\sdk\wandb_run.py", line 3636, in __exit__
+    traceback.print_exception(exc_type, exc_val, exc_tb)
+  File "C:\Users\Tales\AppData\Local\Programs\Python\Python310\lib\traceback.py", line 119, in print_exception
+    te = TracebackException(type(value), value, tb, limit=limit, compact=True)
+  File "C:\Users\Tales\Python\AgenteTuristico\.venv\lib\site-packages\exceptiongroup\_formatting.py", line 96, in __init__
+    self.stack = traceback.StackSummary.extract(
+  File "C:\Users\Tales\AppData\Local\Programs\Python\Python310\lib\traceback.py", line 383, in extract
+    f.line
+  File "C:\Users\Tales\AppData\Local\Programs\Python\Python310\lib\traceback.py", line 306, in line
+    self._line = linecache.getline(self.filename, self.lineno)
+  File "C:\Users\Tales\AppData\Local\Programs\Python\Python310\lib\linecache.py", line 30, in getline
+    lines = getlines(filename, module_globals)
+  File "C:\Users\Tales\AppData\Local\Programs\Python\Python310\lib\linecache.py", line 46, in getlines
+    return updatecache(filename, module_globals)
+  File "C:\Users\Tales\AppData\Local\Programs\Python\Python310\lib\linecache.py", line 136, in updatecache
+    with tokenize.open(fullname) as fp:
+  File "C:\Users\Tales\AppData\Local\Programs\Python\Python310\lib\tokenize.py", line 394, in open
+    buffer = _builtin_open(filename, 'rb')
+KeyboardInterrupt

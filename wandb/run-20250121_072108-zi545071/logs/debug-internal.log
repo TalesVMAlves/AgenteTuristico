@@ -1,0 +1,15 @@
+{"time":"2025-01-21T07:21:09.4741636-03:00","level":"INFO","msg":"stream: starting","core version":"0.19.4","symlink path":"C:\\Users\\Tales\\Python\\AgenteTuristico\\wandb\\run-20250121_072108-zi545071\\logs\\debug-core.log"}
+{"time":"2025-01-21T07:21:10.6844124-03:00","level":"INFO","msg":"created new stream","id":"zi545071"}
+{"time":"2025-01-21T07:21:10.6850008-03:00","level":"INFO","msg":"stream: started","id":"zi545071"}
+{"time":"2025-01-21T07:21:10.6855507-03:00","level":"INFO","msg":"writer: Do: started","stream_id":"zi545071"}
+{"time":"2025-01-21T07:21:10.6855507-03:00","level":"INFO","msg":"sender: started","stream_id":"zi545071"}
+{"time":"2025-01-21T07:21:10.6855507-03:00","level":"INFO","msg":"handler: started","stream_id":"zi545071"}
+{"time":"2025-01-21T07:21:11.116147-03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-01-21T07:21:22.4488476-03:00","level":"INFO","msg":"stream: closing","id":"zi545071"}
+{"time":"2025-01-21T07:21:22.449353-03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-01-21T07:21:22.4499016-03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-01-21T07:21:23.2388662-03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-01-21T07:21:23.8087022-03:00","level":"INFO","msg":"handler: closed","stream_id":"zi545071"}
+{"time":"2025-01-21T07:21:23.8087022-03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"zi545071"}
+{"time":"2025-01-21T07:21:23.8093152-03:00","level":"INFO","msg":"sender: closed","stream_id":"zi545071"}
+{"time":"2025-01-21T07:21:23.8093152-03:00","level":"INFO","msg":"stream: closed","id":"zi545071"}

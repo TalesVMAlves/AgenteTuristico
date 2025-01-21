@@ -1,0 +1,17 @@
+🔄 Processando a cidade: caico
+incorrect startxref pointer(1)
+parsing for Object Streams
+Número de documentos no banco de dados 'chroma\caico': 17
+✅ Nenhum novo documento para adicionar ao banco 'chroma\caico'
+🔄 Processando a cidade: natal
+incorrect startxref pointer(1)
+parsing for Object Streams
+Número de documentos no banco de dados 'chroma\natal': 192
+✅ Nenhum novo documento para adicionar ao banco 'chroma\natal'
+🔄 Processando a cidade: pipa
+incorrect startxref pointer(1)
+parsing for Object Streams
+Número de documentos no banco de dados 'chroma\pipa': 110
+✅ Nenhum novo documento para adicionar ao banco 'chroma\pipa'
+[34m[1mwandb[0m: Adding directory to artifact (.\chroma)... Done. 0.0s
+💾 Chroma databases saved as WandB artifact: chroma_databases:v0:v0
