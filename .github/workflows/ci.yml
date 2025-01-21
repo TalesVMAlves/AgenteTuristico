@@ -5,7 +5,7 @@ on:
     branches:
       - dev
     paths:
-      - 'pdf/**'
+      - 'markdowns/**'
 
 permissions: write-all
 
