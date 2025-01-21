@@ -13,7 +13,7 @@ load_dotenv()
 
 CHROMA_ROOT_PATH = "chroma"
 DATA_ROOT_PATH = "pdf"
-WANDB_API = os.environ.get("WANDB_API")
+WANDB_API = os.getenv("WANDB_API")
 
 def main():
     parser = argparse.ArgumentParser()
