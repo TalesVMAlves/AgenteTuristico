@@ -1,5 +1,7 @@
 .env
 .venv
+.dockerignore
+dockerfile
 __pycache__
 artifacts
 wandb
