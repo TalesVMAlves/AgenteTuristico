@@ -1,6 +1,12 @@
 .env
 .venv
+.dockerignore
+dockerfile
 __pycache__
+artifacts
+wandb
 token files
 client_secret.json
-pasta_com_videos
+chroma
+pdf
+videos

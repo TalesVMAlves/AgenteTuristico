@@ -3,11 +3,10 @@ import os
 import requests
 from get_embedding_function import get_embedding_function
 from langchain_chroma import Chroma
+import wandb
 
 load_dotenv()
 
-
-CHROMA_PATH = "chroma"
 WEATHER_API = os.getenv('WEATHER_API')
 BASE_URL = "http://api.weatherapi.com/v1/forecast.json"
 
@@ -78,11 +77,18 @@ def weatherapi_forecast_periods(date_string: str, destino: str) -> str:
     except Exception as e:
         return f"Erro inesperado: {str(e)}"
 
-def query_rag(query_text: str, destino: str) -> str:
-    embedding_function = get_embedding_function()
-    db = Chroma(persist_directory=f"{CHROMA_PATH}/{destino}", embedding_function=embedding_function)
+def download_artifact(artifact_name: str, project_path: str) -> str:
+    """Downloads the specified artifact from WandB and returns the local directory."""
+    api = wandb.Api()
+    artifact = api.artifact(f"{project_path}/{artifact_name}:latest")
+    download_path = artifact.download()
+    return download_path
 
-    
+def query_rag(query_text: str, destino: str, chroma_city_path: str) -> str:
+    embedding_function = get_embedding_function()
+
+    db = Chroma(persist_directory=chroma_city_path, embedding_function=embedding_function)
+
     results = db.similarity_search_with_score(f"{destino}: {query_text}", k=5)
 
     context_text = "\n\n---\n\n".join([doc.page_content for doc, _score in results])
