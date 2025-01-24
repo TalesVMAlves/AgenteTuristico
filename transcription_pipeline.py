@@ -72,6 +72,10 @@ def processar_videos_para_pdfs(videos_root_folder, pdf_root_folder, modelo_whisp
     """
     Processa todos os vídeos nas subpastas de cidades e gera os PDFs correspondentes.
     """
+    if not os.path.exists(videos_root_folder):
+        print(f"Pasta '{videos_root_folder}' não encontrada. Pulando processamento de vídeos.")
+        return
+    
     for cidade in os.listdir(videos_root_folder):
         caminho_videos_cidade = os.path.join(videos_root_folder, cidade)
         caminho_pdfs_cidade = os.path.join(pdf_root_folder, cidade)
